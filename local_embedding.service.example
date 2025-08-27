@@ -1,0 +1,19 @@
+[Unit]
+Description=Local text embedding and re-ranking – Uvicorn server
+Documentation=man:uvicorn(1)
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/working/directory/local_embedding
+
+ExecStart=/path/to/working/directory/local_embedding/.venv/bin/uvicorn local_embedding:app --host 127.0.0.1 --port 8004 --reload
+
+Restart=on-failure
+RestartSec=5s
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/path/to/working/directory/local_embedding/.env
+LogLevelMax=7
+SyslogIdentifier=local_embedding
+
+[Install]
+WantedBy=default.target
