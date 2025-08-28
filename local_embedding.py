@@ -14,7 +14,7 @@ logger.setLevel(logging.INFO)
 # 1. Choose lightweight models for embedding and reranking
 # -----------------------------------------------------------------------------
 EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"
-RERANKER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
 
 
 # --- Load Models ---
